@@ -10,7 +10,6 @@
 a{
     text-decoration:none;
     color:inherit;
-<<<<<<< HEAD
 }
 
 h2, h3{
@@ -80,4 +79,126 @@ input:focus, textarea:focus, select:focus{
 .grey{
     color:#F2F2F2;
 }
+
+/* LAYOUT */
+.rsv-header__nav, .rsv-header__logo, .rsv-header__inscription{
+    display:flex;
+}
+
+.rsv-header__inscription{
+    flex-direction:column;
+}
+
+.rsv-header{
+    display:grid;
+}
+
+.rsv-header{
+    background-color:white;
+}
+
+.rsv-header__nav{
+    grid-area:reservia-header-nav;
+}
+
+.rsv-header__nav > a{
+    width:50%;
+    text-align:center;
+    border-bottom:0.19rem solid transparent;
+    border-top:0.19rem solid transparent;
+}
+
+.rsv-search__title{
+    line-height:1.0;
+    margin-bottom:0.94rem;
+}
+
+/* MODULES */
+.rsv-header__logo{
+    grid-area:reservia-logo;
+    align-items:center;
+}
+
+.rsv-header__inscription{
+    grid-area:reservia-inscription;
+    color:#0065FC;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+.rsv-header__inscription:hover{
+    text-decoration:underline 2px #0065FC;
+}
+
+@media screen and (max-width:669px){
+    /* LAYOUT */
+    .rsv-header {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    
+        grid-template-areas: 
+            "reservia-logo reservia-inscription"
+            "reservia-header-nav reservia-header-nav";
+    }
+
+    .rsv-header__nav a{
+        padding:2.1rem 0 0.63rem 0;
+        border-bottom:0.19rem solid transparent;
+    }
+
+    .rsv-header__nav a:hover{
+        border-bottom-color: #0065FC;
+    }
+
+    /* MODULES */
+    .rsv-header__logo{
+        padding-left:10%;
+    }
+
+    .rsv-header__inscription{
+        padding-right:10%;
+    }
+}
+
+@media screen and (min-width:670px){
+    /* LAYOUT */
+    .rsv-header{
+        height:112px;
+        grid-template-columns:auto 20.25rem 10.1rem;
+        grid-template-rows: 1fr;
+
+        grid-template-areas: 
+            "reservia-logo reservia-header-nav reservia-inscription";
+        margin: 0 auto;
+        width:92%;
+    }
+    
+    .rsv-header__inscription, .rsv-header__nav > a{
+        padding-top:3.32rem;
+    }
+
+    .rsv-header__nav > a:hover{
+        border-top: 3px solid #0065FC;
+    }
+
+    /* MODULES */
+    .rsv-header__inscription{
+        display:block;
+        padding-top:3.4rem;
+        padding-left:0.8rem;
+    }
+
+    @media screen and (min-width:1440px){
+        /* LAYOUT */
+        .rsv-header{
+            margin:0 auto;
+            width:1341px;
+        }
+
+
+    }
+}
+
+
+
 
