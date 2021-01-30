@@ -1,4 +1,4 @@
-/* SETTINGS */
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -10,6 +10,7 @@
 a{
     text-decoration:none;
     color:inherit;
+<<<<<<< HEAD
 }
 
 h2, h3{
@@ -35,5 +36,48 @@ input, textarea, select{
 
 input:focus, textarea:focus, select:focus{
     outline: none;
+}
+
+/* SETTINGS */
+.rsv-text--sm{
+    font-size:12px;
+}
+
+.rsv-text--md{
+    font-size:14px;
+}
+
+.rsv-text--regular{
+    font-weight:400;
+}
+
+.rsv-text--bold{
+    font-weight:700;
+}
+
+.icon{
+    width:20px;
+    height:20px;
+}
+
+.icon--little{
+    width:12px;
+    height:12px;
+}
+
+.blue{
+    color:#0065FC;
+}
+
+.white{
+    color:white;
+}
+
+.black{
+    color:black;
+}
+
+.grey{
+    color:#F2F2F2;
 }
 
