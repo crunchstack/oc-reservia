@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="application-name" content="Reservia">
@@ -17,10 +17,56 @@
     <header class="rsv-header">
         <a href="" class="rsv-header__logo"><img src="assets/img/logo/Reservia.svg" alt="Logo de Reservia"></a>
         <nav class="rsv-header__nav">
-            <a class="rsv-text--sm rsv-text--regular" href="#">Hébergements</a>
-            <a class="rsv-text--sm rsv-text--regular" href="#">Activités</a>
+            <a class="rsv-text--sm rsv-text--regular" href="#hebergement">Hébergements</a>
+            <a class="rsv-text--sm rsv-text--regular" href="#activity">Activités</a>
         </nav>
-        <a class="rsv-header__inscription rsv-text--sm rsv-text--bold" href="">S'inscrire</a>
+        <a href="#" class="rsv-header__inscription rsv-text--sm rsv-text--bold">S'inscrire</a>
     </header>
-</body>
+
+    <section class="rsv-search"> 
+        <header class="rsv-search__hook">
+            <h2 class="rsv-search__title">Trouvez votre hébergement pour des vacances de rêve</h2>
+            <p class="rsv-search__description">En plein centre ville ou en pleine nature</p>
+        </header>
+
+        <form method="GET" action="index.html" class="rsv-searchbar">
+            <div class="rsv-searchbar__pre">
+                <i class="black icon fas fa-map-marker-alt"></i>
+            </div>
+            <input name="search" class="rsv-text--md rsv-text--bold rsv-searchbar__input" type="text" value="Marseille, France">
+            <div class="rsv-searchbar__button">
+                <input class="rsv-searchbar__label" type="submit" value="">
+                <i class="icon white fas fa-search"></i>
+            </div>
+        </form>
+        
+        <div class="rsv-filters-wrapper">
+            <h3 class="rsv-filters__title">Filtres</h3>
+            <div class="rsv-filters">
+                <div class="rsv-filter">
+                    <div class="rsv-filter__pre"><i class="icon blue fas fa-money-bill-wave"></i></div>
+                    <h3 class="rsv-filter__content">Economique</h3>
+                </div>
+                <div class="rsv-filter">
+                    <div class="rsv-filter__pre"><i class="icon blue fas fa-child"></i></div>
+                    <h3 class="rsv-filter__content">Familial</h3>
+                </div>
+                <div class="rsv-filter">
+                    <div class="rsv-filter__pre"><i class="blue icon fas fa-heart"></i></div>
+                    <h3 class="rsv-filter__content">Romantique</h3>
+                </div>
+                <div class="rsv-filter">
+                    <div class="rsv-filter__pre"><i class="blue icon fas fa-dog"></i></div>
+                    <h3 class="rsv-filter__content">Animaux autorisés</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rsv-search__result">
+            <div class="rsv-search__icon">
+                <i class="icon--little blue fas fa-info"></i>
+            </div>
+            <p class="rsv-search__response">Plus de 500 logements sont disponibles dans cette ville</p>
+        </div>
+    </section>
 </html>
