@@ -81,6 +81,10 @@ input:focus, textarea:focus, select:focus{
 }
 
 /* LAYOUT */
+.stars{
+    display:flex;   
+}
+
 .rsv-header__nav, 
 .rsv-header__logo, 
 .rsv-header__inscription,
@@ -93,21 +97,27 @@ input:focus, textarea:focus, select:focus{
 .rsv-filters-wrapper, 
 .rsv-filters,
 .rsv-filter,
-.rsv-filter__pre
+.rsv-filter__pre,
+.rsv-card,
+.rsv-popularity__header
 {
     display:flex;
 }
 
 .rsv-header__inscription,
-.rsv-filters-wrapper{
+.rsv-filters-wrapper,
+.rsv-card--vertical{
     flex-direction:column;
 }
 
-.rsv-header{
+.rsv-header,
+.rsv-booking__center,
+.rsv-popularity__cards, 
+.rsv-city__cards{
     display:grid;
 }
 
-.rsv-search{
+.rsv-search, .rsv-booking__center{
     margin:0 auto;
     width:92%;
 }
@@ -166,6 +176,23 @@ input:focus, textarea:focus, select:focus{
 .rsv-search__response{
     align-self:center;
     line-height:1.3;
+}
+
+.rsv-booking{
+    width:100%;
+    background-image: linear-gradient(#F2F2F2 575px, #ffffff 0);
+}
+
+.rsv-popularity__header{
+    justify-content:space-between
+}
+
+.rsv-popularity{
+    grid-area:popularity;
+}
+
+.rsv-city{
+    grid-area:city;
 }
 
 
@@ -251,6 +278,76 @@ input:focus, textarea:focus, select:focus{
     z-index:10000;
 }
 
+.rsv-card{
+    padding:5px;
+    background-color:white;
+    border-radius:20px;
+    box-shadow: 0.125rem 0.125rem 0.625rem #f2f2f2;
+    transition-duration: 0.2s;
+    transition-property:all;
+    width:100%;
+    height:100%;
+}
+
+.rsv-card__description::after{
+    content:"€";
+    font-weight:700;
+}
+
+
+.rsv-card:hover{
+    box-shadow: 0.125rem 0.125rem 0.625rem #0065FC;
+    transform: scale(1.02);
+}
+
+.rsv-card--horizontal{
+    flex-direction:row;
+}
+
+.rsv-card--horizontal .rsv-card__title{
+    width:135px;
+}
+
+
+.rsv-card--horizontal .rsv-card__img{
+    width:127px;
+    height:100%;
+    border-radius:20px 0 0 20px;
+    object-fit:cover;
+}
+
+.rsv-card--vertical .rsv-card__img{
+    width:100%;
+    height:127px;
+    border-radius:20px 20px 0 0;
+    object-fit:cover;
+}
+
+.rsv-card--horizontal > .rsv-card__header{
+    margin-top:10px;
+    margin-left:1.25rem;
+}
+
+.rsv-card--vertical .rsv-card__header{
+   margin-left:0.8125rem;
+}
+
+.rsv-card--vertical .rsv-card__title{
+    margin-bottom:2px;
+}
+
+.rsv-card--vertical .rsv-card__description{
+    margin-bottom:8px;
+}
+
+.rsv-card--horizontal .rsv-card__title{
+    margin-bottom:0.625rem;
+}
+
+.rsv-card--horizontal .rsv-card__description{
+    margin-bottom:2.5rem;
+}
+
 
 @media screen and (max-width:669px){
     /* LAYOUT */
@@ -299,6 +396,33 @@ input:focus, textarea:focus, select:focus{
         margin-left:0.82rem;
     }
 
+    .rsv-booking__center{
+        grid-template-columns:1fr;
+        grid-template-rows:1fr;
+        grid-template-areas: 
+            "popularity"
+            "city";
+    }
+
+    .rsv-popularity__header, .rsv-city__header{
+        padding-top:1.9rem;
+        margin-bottom:1.25rem;
+    }
+
+    .rsv-popularity__cards, .rsv-city__cards{
+        grid-template-columns:1fr;
+        row-gap:11px;
+        margin-bottom:2.5rem;
+    }
+
+    .rsv-popularity__cards{
+        grid-template-rows:repeat(3, 145px);
+    }
+
+    .rsv-city__cards{
+        grid-template-rows:repeat(6, 200px)
+    }
+
     /* MODULES */
     .rsv-searchbar{
         position:relative;
@@ -306,6 +430,8 @@ input:focus, textarea:focus, select:focus{
         max-width:385px;
         margin-bottom:2.2rem;
     }
+
+
     
     .rsv-searchbar__pre{
         width:17%;
@@ -452,11 +578,89 @@ input:focus, textarea:focus, select:focus{
         font-size: 17.6px;
     }
 
+    @media screen and (max-width:1439px){
+        .rsv-booking{
+            background-image:none;
+        }
+
+        .rsv-booking__center{
+            grid-template-columns:1fr;
+            grid-template-rows:1fr;
+            grid-template-areas: 
+                "popularity"
+                "city";
+        }
+
+        .rsv-popularity__header, .rsv-city__header{
+            padding-top:1.88rem;
+            margin-bottom:1.25rem;
+        }
+    
+        .rsv-popularity__cards, .rsv-city__cards{
+            grid-template-columns:1fr;
+            grid-template-rows:1fr;
+            row-gap:0.69rem;
+            margin-bottom:1.57rem;
+        }
+    
+        .rsv-popularity__cards{
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows:repeat(2, 145px);
+            grid-column-gap:1.25rem;
+            grid-row-gap:2.07rem;   
+        }
+    
+        .rsv-city__cards{
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows:repeat(3, 200px);
+            grid-gap: 1.9rem;
+        }
+    }
+
     @media screen and (min-width:1440px){
         /* LAYOUT */
-        .rsv-header, .rsv-search{
+        .rsv-header, .rsv-search, .rsv-booking__center{
             margin:0 auto;
             width:1341px;
+        }
+
+        .rsv-booking{
+            background-image:none;
+        }
+    
+        .rsv-booking__center{
+            background-color:white;
+            grid-template-columns:880px auto;
+            grid-template-rows:622px;
+            grid-gap:42px;
+            grid-template-areas: 
+                "city popularity";
+        }
+
+        .rsv-city, .rsv-popularity{
+            background-color:#F2F2F2;
+            padding:2.5rem;
+            border-radius:1.25rem;
+        }
+
+        .rsv-popularity__header, .rsv-city__header{
+            margin-bottom:1.6rem;
+        }
+
+        .rsv-popularity__cards{
+            grid-template-columns:345px;
+            grid-template-rows:repeat(3, 145px);
+            grid-row-gap:33px;   
+        }
+    
+        .rsv-city__cards{
+            grid-template-columns:repeat(3, 247px);
+            grid-template-rows:repeat(2, 200px);
+            grid-gap: 1.9rem;
+        }
+    
+        .rsv-city__cards{
+            margin-bottom:1.9rem;
         }
     }
 }
