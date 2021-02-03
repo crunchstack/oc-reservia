@@ -99,7 +99,9 @@ input:focus, textarea:focus, select:focus{
 .rsv-filter,
 .rsv-filter__pre,
 .rsv-card,
-.rsv-popularity__header
+.rsv-popularity__header,
+.rsv-footer__wrapper,
+.rsv-nav-section
 {
     display:flex;
 }
@@ -120,7 +122,7 @@ input:focus, textarea:focus, select:focus{
     display:grid;
 }
 
-.rsv-search, .rsv-booking__center, .rsv-activity{
+.rsv-search, .rsv-booking__center, .rsv-activity, .rsv-footer__center{
     margin:0 auto;
     width:92%;
 }
@@ -200,6 +202,16 @@ input:focus, textarea:focus, select:focus{
 
 .rsv-activity__cards{
     margin-bottom:3.75rem;
+}
+
+.rsv-footer{
+    background-color:#F2F2F2;
+}
+
+.rsv-footer__wrapper{
+    padding-top:3.12rem;
+    padding-bottom:2.5rem;
+    justify-content:space-between
 }
 
 
@@ -383,6 +395,26 @@ input:focus, textarea:focus, select:focus{
     padding:15px;
 }
 
+.rsv-nav-section > nav > a{
+    color:black;
+    display:block;
+    transition-duration:0.2s;
+    transition-property: color;
+}
+
+.rsv-nav-section > nav > a:not(:last-child){
+    margin-bottom:0.625rem;
+}
+
+.rsv-nav-section__title{
+    margin-bottom:0.625rem;
+}
+
+.rsv-nav-section > nav > a:hover{
+    color:#0065FC;
+    transition-duration:0.2s;
+    transition-property: color;
+}
 
 @media screen and (max-width:669px){
     /* LAYOUT */
@@ -475,7 +507,11 @@ input:focus, textarea:focus, select:focus{
         grid-row-gap:1.25rem;
     }
 
-
+    .rsv-footer__wrapper{
+        height:400px;
+        flex-direction:column;
+        justify-content:space-between;
+    }
 
     /* MODULES */
     .rsv-searchbar{
@@ -485,8 +521,6 @@ input:focus, textarea:focus, select:focus{
         margin-bottom:2.2rem;
     }
 
-
-    
     .rsv-searchbar__pre{
         width:17%;
     }
@@ -519,6 +553,14 @@ input:focus, textarea:focus, select:focus{
         font-size: 15.5px;
         padding-left:14px;
         padding-right:14px;
+    }
+
+    .rsv-nav-section{
+        flex-direction:column;
+    }
+
+    .rsv-nav-section > nav > a{
+        display:block;
     }
 }
 
@@ -637,6 +679,10 @@ input:focus, textarea:focus, select:focus{
         font-size: 17.6px;
     }
 
+    .rsv-nav-section{
+        flex-direction:column;
+    }
+
     @media screen and (max-width:1439px){
         .rsv-booking{
             background-image:none;
@@ -693,7 +739,7 @@ input:focus, textarea:focus, select:focus{
 
     @media screen and (min-width:1440px){
         /* LAYOUT */
-        .rsv-header, .rsv-search, .rsv-booking__center, .rsv-activity{
+        .rsv-header, .rsv-search, .rsv-booking__center, .rsv-activity, .rsv-footer__center{
             margin:0 auto;
             width:1341px;
         }
@@ -757,6 +803,12 @@ input:focus, textarea:focus, select:focus{
             grid-column: 2 / 3;
         }
 
+        .rsv-footer__wrapper{
+            width:72%;
+            flex-direction:row;
+            justify-content:space-between;
+        }
+
         /* MODULES */
         .rsv-card-alt[data-activity-id="1"], .rsv-card-alt[data-activity-id="4"]{
             grid-row: 1 / 3;
@@ -788,7 +840,3 @@ input:focus, textarea:focus, select:focus{
         }
     }
 }
-
-
-
-
