@@ -7,6 +7,10 @@
     letter-spacing:0.2px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     text-decoration:none;
     color:inherit;
@@ -126,6 +130,7 @@ input:focus, textarea:focus, select:focus{
 .rsv-search, .rsv-booking__center, .rsv-activity, .rsv-footer__center{
     margin:0 auto;
     width:92%;
+    min-width:180px;
 }
 
 .rsv-header{
@@ -246,8 +251,7 @@ input:focus, textarea:focus, select:focus{
     align-items:center;
     justify-content:center;
     background-color:#0065FC;
-    height:3.2rem;
-    flex-shrink:0;
+    height:100%;
 }
 
 .rsv-searchbar__label{
@@ -263,12 +267,12 @@ input:focus, textarea:focus, select:focus{
 }
 
 .rsv-filter{
+    position:relative;
     border-radius: 25px;
     border: 2px solid #F2F2F2;
     background-color:white;   
     align-items:center;
     height:50px;
-    flex-shrink:0;
     transition-duration: 0.2s;
     transition-property:all;
 }
@@ -276,8 +280,6 @@ input:focus, textarea:focus, select:focus{
 .rsv-filter:hover{
     box-shadow: 2px 2px 10px #0065FC;
     transform: scale(1.02);
-    transition-duration: 0.2s;
-    transition-property:all;
 }
 
 .rsv-filter:last-child{
@@ -285,6 +287,9 @@ input:focus, textarea:focus, select:focus{
 }
 
 .rsv-filter__pre{    
+    position:relative;
+    top:0px;
+    left:-2px;
     align-items:center;
     justify-content:center;
     border-radius:25px;
@@ -292,7 +297,6 @@ input:focus, textarea:focus, select:focus{
     text-align:center;
     width:50px;
     height:50px;
-    z-index:10000;
 }
 
 .rsv-card{
@@ -412,6 +416,7 @@ input:focus, textarea:focus, select:focus{
 @media screen and (max-width:669px){
     /* LAYOUT */
     .rsv-header {
+        min-width:180px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
     
@@ -515,18 +520,25 @@ input:focus, textarea:focus, select:focus{
     }
 
     .rsv-searchbar__pre{
-        width:17%;
+        width:50px;
+        margin-right:20px;
+        flex-shrink: 0;
     }
 
     .rsv-searchbar__input{
-        width:76%;
-        padding-left:1.25rem;
+        width:79.71%;
     }
 
     .rsv-searchbar__button{
-        width:3.25rem;
-        border-radius: 1rem;
-        margin-right:-0.063rem;
+        position:absolute;
+        
+        right:0%;
+        flex-shrink: 0;
+
+        width:52px;
+        height:52px;
+
+        border-radius:1rem;
     }
 
     .rsv-searchbar__label{
@@ -611,18 +623,17 @@ input:focus, textarea:focus, select:focus{
     }
     
     .rsv-searchbar__pre{
-        width:15%;
-    }
-
-    .rsv-searchbar__input{
-        width:55%;
-        padding-left:1.25rem;
+        width:53px;
+        margin-right:20px;
     }
 
     .rsv-searchbar__button{
+        position:absolute;
+        top:-1px;
+        right:0%;
         width:132px;
+        height:52px;
         border-radius: 0 1rem 1rem 0;
-        margin-right:-0.063rem;
     }
 
     .rsv-searchbar__label{
@@ -777,7 +788,6 @@ input:focus, textarea:focus, select:focus{
             grid-template-columns:repeat(2, 306px);
             grid-column-gap:2.5rem;
             grid-row-gap:2.5rem;
-
         }
 
         .rsv-activity__cards{
