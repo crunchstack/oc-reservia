@@ -68,16 +68,18 @@ input:focus, textarea:focus, select:focus, button:focus {
   display: grid;
 }
 
-.bar--footer{
+.bar--footer, .bar--search {
   position: absolute;
   width: 100%;
   background-color: #F2F2F2;
   z-index: -1000;
   left: 0;
+}
+
+.bar--footer {
   bottom: 0;
   height: 227px;
 }
-
 
 /* MAIN */
 .l-app {
@@ -310,7 +312,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   margin-left: 20px;
 }
 
-.activity-card[data-css-activity="1"], .booking-card[data-css-booking="1"]{
+.activity-card[data-css-activity="1"] {
   grid-area: one;
 }
 
@@ -318,7 +320,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   height: 391px;
 }
 
-.activity-card[data-css-activity="2"], .booking-card[data-css-booking="2"]{
+.activity-card[data-css-activity="2"] {
   grid-area: two;
 }
 
@@ -326,28 +328,34 @@ input:focus, textarea:focus, select:focus, button:focus {
   height: 183px;
 }
 
-.activity-card[data-css-activity="3"], .booking-card[data-css-booking="2"]{
+.activity-card[data-css-activity="3"] {
   grid-area: three;
 }
 
 .activity-card[data-css-activity="3"] img {
   height: 111px;
 }
-.activity-card[data-css-activity="4"] .booking-card[data-css-booking="4"]{
+
+.activity-card[data-css-activity="4"] {
   grid-area: four;
 }
+
 .activity-card[data-css-activity="4"] img {
   height: 391px;
 }
-.activity-card[data-css-activity="5"] .booking-card[data-css-booking="5"]{
+
+.activity-card[data-css-activity="5"] {
   grid-area: five;
 }
+
 .activity-card[data-css-activity="5"] img {
   height: 141px;
 }
-.activity-card[data-css-activity="6"] .booking-card[data-css-booking="6"]{
+
+.activity-card[data-css-activity="6"] {
   grid-area: six;
 }
+
 .activity-card[data-css-activity="6"] img {
   height: 155px;
 }
@@ -377,12 +385,36 @@ input:focus, textarea:focus, select:focus, button:focus {
   content: "€";
 }
 
+.booking-card[data-css-booking="1"] {
+  grid-area: one;
+}
+
 .booking-card[data-css-booking="1"] .booking-card__price--low::after {
   content: "22€";
 }
 
+.booking-card[data-css-booking="2"] {
+  grid-area: two;
+}
+
+.booking-card[data-css-booking="3"] {
+  grid-area: three;
+}
+
+.booking-card[data-css-booking="4"] {
+  grid-area: four;
+}
+
+.booking-card[data-css-booking="5"] {
+  grid-area: five;
+}
+
 .booking-card[data-css-booking="5"] .booking-card__price--low::after {
   content: "25€";
+}
+
+.booking-card[data-css-booking="6"] {
+  grid-area: six;
 }
 
 .booking-card[data-css-booking="7"] {
@@ -425,13 +457,6 @@ input:focus, textarea:focus, select:focus, button:focus {
   font-size: 12px;
 }
 
-.star--checked {
-  color: #0065FC;
-}
-
-.star--unchecked {
-  color: #D9D9D9;
-}
 
 .booking-card--horizontal img {
   object-fit: cover;
@@ -439,24 +464,28 @@ input:focus, textarea:focus, select:focus, button:focus {
   height: 100%;
   border-radius: 20px 0 0 20px;
 }
-
 .booking-card--horizontal .booking-card__header {
   width: 140px;
   margin-top: 19px;
   margin-left: 19px;
 }
-
 .booking-card--horizontal .booking-card__title {
   line-height: 1.2;
   margin-bottom: 9px;
 }
-
 .booking-card--horizontal .booking-card__price {
   margin-bottom: 35px;
 }
-
 .booking-card--horizontal .booking-card__stars > .fa-star {
   font-size: 11px;
+}
+
+.star--checked {
+  color: #0065FC;
+}
+
+.star--unchecked {
+  color: #D9D9D9;
 }
 
 .hook {
@@ -578,7 +607,6 @@ input:focus, textarea:focus, select:focus, button:focus {
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;
   }
-
   .pill__text {
     font-size: 16px;
   }
@@ -592,7 +620,6 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-row-gap: 40px;
     grid-template-areas: "popularity ." "city city";
   }
-
   .l-booking__city, .l-booking__popularity {
     align-items: flex-start;
   }
@@ -626,7 +653,6 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-row-gap: 40px;
     grid-template-areas: "left" "right";
   }
-
   .g-activity__left, .g-activity__right {
     grid-template-columns: 1fr 1fr;
   }
@@ -825,7 +851,6 @@ input:focus, textarea:focus, select:focus, button:focus {
   .nav-section__title {
     margin-bottom: 25px;
   }
-
   .nav-section__link:last-child {
     margin-bottom: 52px;
   }
