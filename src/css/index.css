@@ -10,11 +10,9 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 body {
-  min-height: 100%;
   position: relative;
 }
 
@@ -68,15 +66,12 @@ input:focus, textarea:focus, select:focus, button:focus {
   display: grid;
 }
 
-.bar--footer, .bar--search {
+.bar--footer{
   position: absolute;
   width: 100%;
   background-color: #F2F2F2;
   z-index: -1000;
   left: 0;
-}
-
-.bar--footer {
   bottom: 0;
   height: 227px;
 }
@@ -169,38 +164,33 @@ input:focus, textarea:focus, select:focus, button:focus {
   grid-template-columns: repeat(3, 248px);
   grid-gap: 33px;
   padding-bottom: 40px;
-  grid-template-areas: "one two three" "four five six";
 }
 
 .g-booking--popularity {
   grid-template-rows: repeat(3, 147px);
   grid-template-columns: 1fr;
   grid-row-gap: 30px;
-  grid-template-areas: "seven" "eight" "nine";
 }
 
 .g-activity {
   grid-template-columns: repeat(2, 650px);
   grid-template-rows: 446px;
   grid-column-gap: 40px;
-  grid-template-areas: "left right";
 }
 
-.g-activity__left, .g-activity__right {
+.g-activity--even, .g-activity--uneven{
   grid-template-columns: repeat(2, 300px);
   grid-gap: 43px;
 }
 
-.g-activity__left {
+.g-activity--even {
   grid-template-rows: 236px 164px;
   grid-template-areas: "one two" "one three";
-  grid-area: left;
 }
 
-.g-activity__right {
+.g-activity--uneven {
   grid-template-rows: 196px 209px;
-  grid-template-areas: "four five" "four six";
-  grid-area: right;
+  grid-template-areas: "one two" "one three";
 }
 
 /* COMPONENTS */
@@ -312,51 +302,42 @@ input:focus, textarea:focus, select:focus, button:focus {
   margin-left: 20px;
 }
 
-.activity-card[data-css-activity="1"] {
-  grid-area: one;
+.g-activity--even > *:first-child, 
+.g-activity--uneven > *:first-child{
+  grid-area:one;
 }
 
-.activity-card[data-css-activity="1"] img {
+.g-activity--even > *:nth-child(2), 
+.g-activity--uneven > *:nth-child(2){
+    grid-area:two;
+}
+
+.g-activity--even > *:nth-child(3), 
+.g-activity--uneven > *:nth-child(3){
+    grid-area:three;
+}
+
+.g-activity--even > *:first-child img {
   height: 391px;
 }
 
-.activity-card[data-css-activity="2"] {
-  grid-area: two;
-}
-
-.activity-card[data-css-activity="2"] img {
+.g-activity--even > *:nth-child(2) img {
   height: 183px;
 }
 
-.activity-card[data-css-activity="3"] {
-  grid-area: three;
-}
-
-.activity-card[data-css-activity="3"] img {
+.g-activity--even > *:nth-child(3) img{
   height: 111px;
 }
 
-.activity-card[data-css-activity="4"] {
-  grid-area: four;
-}
-
-.activity-card[data-css-activity="4"] img {
+.g-activity--uneven > *:first-child img{
   height: 391px;
 }
 
-.activity-card[data-css-activity="5"] {
-  grid-area: five;
-}
-
-.activity-card[data-css-activity="5"] img {
+.g-activity--uneven > *:nth-child(2) img {
   height: 141px;
 }
 
-.activity-card[data-css-activity="6"] {
-  grid-area: six;
-}
-
-.activity-card[data-css-activity="6"] img {
+.g-activity--uneven > *:nth-child(3) img {
   height: 155px;
 }
 
@@ -385,48 +366,12 @@ input:focus, textarea:focus, select:focus, button:focus {
   content: "€";
 }
 
-.booking-card[data-css-booking="1"] {
-  grid-area: one;
-}
-
-.booking-card[data-css-booking="1"] .booking-card__price--low::after {
+.booking-card__price--low:: {
   content: "22€";
-}
-
-.booking-card[data-css-booking="2"] {
-  grid-area: two;
-}
-
-.booking-card[data-css-booking="3"] {
-  grid-area: three;
-}
-
-.booking-card[data-css-booking="4"] {
-  grid-area: four;
-}
-
-.booking-card[data-css-booking="5"] {
-  grid-area: five;
 }
 
 .booking-card[data-css-booking="5"] .booking-card__price--low::after {
   content: "25€";
-}
-
-.booking-card[data-css-booking="6"] {
-  grid-area: six;
-}
-
-.booking-card[data-css-booking="7"] {
-  grid-area: seven;
-}
-
-.booking-card[data-css-booking="8"] {
-  grid-area: eight;
-}
-
-.booking-card[data-css-booking="9"] {
-  grid-area: nine;
 }
 
 .booking-card--vertical {
@@ -620,6 +565,7 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-row-gap: 40px;
     grid-template-areas: "popularity ." "city city";
   }
+
   .l-booking__city, .l-booking__popularity {
     align-items: flex-start;
   }
@@ -638,7 +584,6 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-template-rows: repeat(3, 147px);
     grid-template-columns: 1fr;
     grid-column-gap: 30px;
-    grid-template-areas: "seven" "eight" "nine";
   }
 
   .g-booking--city {
@@ -653,30 +598,9 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-row-gap: 40px;
     grid-template-areas: "left" "right";
   }
-  .g-activity__left, .g-activity__right {
+
+  .g-activity--even, .g-activity--uneven {
     grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 455px) {
-  .searchbar {
-    width: 95.4%;
-    min-width: 220px;
-    margin-top: 38px;
-  }
-
-  .searchbar__button {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
-  }
-
-  .searchbar__button > .fa-search {
-    display: inline-block;
-  }
-
-  .searchbar__button > span {
-    font-size: 0;
   }
 }
 
@@ -757,7 +681,6 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-template-columns: 1fr;
     grid-row-gap: 10px;
     padding-bottom: 20px;
-    grid-template-areas: "one" "two" "three" "four" "five" "six";
   }
 
   .g-booking--popularity {
@@ -771,18 +694,14 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-template-areas: "left" "right";
   }
 
-  .g-activity__left, .g-activity__right {
+  .g-activity--even, .g-activity--uneven {
     grid-template-columns: 1fr;
     grid-template-rows: 191px 191px 191px;
     grid-row-gap: 24px;
   }
 
-  .g-activity__left {
+  .g-activity--even , .g-activity--uneven{
     grid-template-areas: "one" "two" "three";
-  }
-
-  .g-activity__right {
-    grid-template-areas: "four" "five" "six";
   }
 
   /* GENERIC */
@@ -853,5 +772,27 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
   .nav-section__link:last-child {
     margin-bottom: 52px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .searchbar {
+    width: 95.4%;
+    min-width: 220px;
+    margin-top: 38px;
+  }
+
+  .searchbar__button {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+  }
+
+  .searchbar__button > .fa-search {
+    display: inline-block;
+  }
+
+  .searchbar__button > span {
+    font-size: 0;
   }
 }
