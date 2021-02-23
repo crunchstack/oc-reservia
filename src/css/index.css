@@ -368,10 +368,6 @@ input:focus, textarea:focus, select:focus, button:focus {
   content: "€";
 }
 
-.booking-card__price--low:: {
-  content: "22€";
-}
-
 .booking-card[data-css-booking="5"] .booking-card__price--low::after {
   content: "25€";
 }
