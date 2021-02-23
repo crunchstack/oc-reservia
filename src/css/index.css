@@ -207,6 +207,8 @@ input:focus, textarea:focus, select:focus, button:focus {
   transition: all 0.2s;
 }
 
+
+
 .pill:last-child {
   margin-right: 0px;
 }
