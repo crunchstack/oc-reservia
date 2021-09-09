@@ -29,7 +29,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/pexilis/BankJordan_2_30012021">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/img/logo/Reservia.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Reservia</h3>
@@ -146,14 +146,14 @@ Project Link: [https://github.com/pexilis/BankJordan_2_30012021](https://github.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/pexilis/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/pexilis/BankJordan_2_30012021.svg?style=for-the-badge
 [contributors-url]: https://github.com/pexilis/BankJordan_2_30012021/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/pexilis/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/pexilis/BankJordan_2_30012021.svg?style=for-the-badge
 [forks-url]: https://github.com/pexilis/BankJordan_2_30012021/network/members
-[stars-shield]: https://img.shields.io/github/stars/pexilis/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/pexilis/BankJordan_2_30012021.svg?style=for-the-badge
 [stars-url]: https://github.com/pexilis/BankJordan_2_30012021/stargazers
-[issues-shield]: https://img.shields.io/github/issues/pexilis/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/pexilis/BankJordan_2_30012021.svg?style=for-the-badge
 [issues-url]: https://github.com/pexilis/BankJordan_2_30012021/issues
-[license-shield]: https://img.shields.io/github/license/pexilis/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/pexilis/BankJordan_2_30012021.svg?style=for-the-badge
 [license-url]: https://github.com/pexilis/BankJordan_2_30012021/blob/master/LICENSE.txt
 [product-screenshot]: /documentation/index_screenshot.jpeg
