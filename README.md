@@ -156,4 +156,4 @@ Project Link: [https://github.com/pexilis/BankJordan_2_30012021](https://github.
 [issues-url]: https://github.com/pexilis/BankJordan_2_30012021/issues
 [license-shield]: https://img.shields.io/github/license/pexilis/repo.svg?style=for-the-badge
 [license-url]: https://github.com/pexilis/BankJordan_2_30012021/blob/master/LICENSE.txt
-[product-screenshot]: /documentation/index_screenshot.png
+[product-screenshot]: /documentation/index_screenshot.jpeg
